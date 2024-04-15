@@ -1,4 +1,6 @@
 #!/bin/bash
+git clone -c feature.manyFiles=true https://github.com/spack/spack.git
+export PATH="$PWD/spack/bin:$PATH"
 spack env create hpacml ./spack.lock
 spack env activate hpacml -p
 spack concretize
