@@ -1,0 +1,101 @@
+# This is a Spack Environment file.
+#
+# It describes a set of packages to be installed, along with
+# configuration settings.
+spack:
+  # add package specs to the `specs` list
+  specs:
+  - nlohmann-json
+  - py-torch
+  - py-scikit-learn
+  - py-sh
+  - ninja
+  - py-click
+  - py-plotly
+  - py-pip
+  - rust@1.75.0
+  - py-tensorboard
+  - hdf5@1.14.3
+  - py-jupyterlab
+  - py-pytest
+  - py-pandas
+  - py-ax-platform
+  - py-matplotlib
+  - cmake
+  - py-tqdm
+  - ncurses
+  - py-h5py
+  - py-lightning
+  - hpctoolkit+cuda ^xz@5.2.6+pic
+  view: true
+  concretizer:
+    unify: true
+  packages:
+    magma:
+      buildable: false
+      externals:
+      - spec: magma@2.7.2
+        modules:
+        - magma/2.7.2
+    openmpi:
+      buildable: false
+      externals:
+      - spec: openmpi@4.1.6~cuda~cxx~cxx_exceptions~java~memchecker+pmi+static~wrapper-rpath
+          fabrics=ofi schedulers=slurm
+        prefix: /sw/spack/deltas11-2023-03/apps/linux-rhel8-zen3/gcc-11.4.0/openmpi-4.1.6-lranp74
+    cuda:
+      buildable: false
+      externals:
+      - spec: cuda@11.8.89
+        prefix: /sw/spack/deltas11-2023-03/apps/linux-rhel8-zen3/gcc-11.4.0/cuda-11.8.0-vfixfmc
+    gcc:
+      externals:
+      - spec: gcc@11.4.0 languages='c,c++,fortran'
+        prefix: /sw/spack/deltas11-2023-03/apps/linux-rhel8-x86_64/gcc-8.5.0/gcc-11.4.0-yycklku
+        extra_attributes:
+          compilers:
+            c: /sw/spack/deltas11-2023-03/apps/linux-rhel8-x86_64/gcc-8.5.0/gcc-11.4.0-yycklku/bin/gcc
+            cxx: /sw/spack/deltas11-2023-03/apps/linux-rhel8-x86_64/gcc-8.5.0/gcc-11.4.0-yycklku/bin/g++
+            fortran: /sw/spack/deltas11-2023-03/apps/linux-rhel8-x86_64/gcc-8.5.0/gcc-11.4.0-yycklku/bin/gfortran
+      - spec: gcc@8.5.0 languages='c,c++,fortran'
+        prefix: /usr
+        extra_attributes:
+          compilers:
+            c: /usr/bin/gcc
+            cxx: /usr/bin/g++
+            fortran: /usr/bin/gfortran
+    all:
+      compiler: [gcc@11.4.0]
+      require: '%gcc@11.4.0'
+      variants: [+cuda cuda_arch=80]
+      providers:
+        mpi: [openmpi@4.1.6]
+  mirrors:
+    v0.20.1: https://binaries.spack.io/v0.20.1
+  compilers:
+  - compiler:
+      spec: gcc@=11.4.0
+      paths:
+        cc: /sw/spack/deltas11-2023-03/apps/linux-rhel8-x86_64/gcc-8.5.0/gcc-11.4.0-yycklku/bin/gcc
+        cxx: /sw/spack/deltas11-2023-03/apps/linux-rhel8-x86_64/gcc-8.5.0/gcc-11.4.0-yycklku/bin/g++
+        f77: /sw/spack/deltas11-2023-03/apps/linux-rhel8-x86_64/gcc-8.5.0/gcc-11.4.0-yycklku/bin/gfortran
+        fc: /sw/spack/deltas11-2023-03/apps/linux-rhel8-x86_64/gcc-8.5.0/gcc-11.4.0-yycklku/bin/gfortran
+      flags: {}
+      operating_system: rhel8
+      target: x86_64
+      modules: []
+      environment: {}
+      extra_rpaths: []
+  - compiler:
+      spec: gcc@=8.5.0
+      paths:
+        cc: /usr/bin/gcc
+        cxx: /usr/bin/g++
+        f77: /usr/bin/gfortran
+        fc: /usr/bin/gfortran
+      flags: {}
+      operating_system: rhel8
+      target: x86_64
+      modules: []
+      environment: {}
+      extra_rpaths: []
