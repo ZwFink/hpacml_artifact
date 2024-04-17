@@ -1,176 +1,179 @@
-absl-py @ file:///tmp/zanef2/spack-stage/spack-stage-py-absl-py-1.4.0-l7kyd3utjtjwsm3o7gnd3u7vk52hlilb/spack-src
-aiohttp @ file:///tmp/zanef2/spack-stage/spack-stage-py-aiohttp-3.8.4-z24xmcfzjlc7maigmhinkxzxqbyehyqg/spack-src
-aiosignal @ file:///tmp/zanef2/spack-stage/spack-stage-py-aiosignal-1.2.0-vq2d6mlwgp57wwuaqo7xoav6aojbrngm/spack-src
-anyio @ file:///tmp/zanef2/spack-stage/spack-stage-py-anyio-3.6.2-zt2ulnl3hestkxp667x7ittustedzniu/spack-src
-argon2-cffi @ file:///tmp/zanef2/spack-stage/spack-stage-py-argon2-cffi-21.3.0-whqzyazvxhootpqzdqxuh7e76s65ax4u/spack-src
-argon2-cffi-bindings @ file:///tmp/zanef2/spack-stage/spack-stage-py-argon2-cffi-bindings-21.2.0-m2ko4m55p7x5ewyvuxqw6a7pvtcokomk/spack-src
-asttokens @ file:///tmp/zanef2/spack-stage/spack-stage-py-asttokens-2.4.0-a4zujlxeuyggka546nc6vkr57oswlj7f/spack-src
-astunparse @ file:///tmp/zanef2/spack-stage/spack-stage-py-astunparse-1.6.3-rl3m54blvxje7i6v33fb47g2a7fdhxxr/spack-src
-async-timeout @ file:///tmp/zanef2/spack-stage/spack-stage-py-async-timeout-4.0.2-yw4lmwu2bukktuvdoitmszrddlrgd7rf/spack-src
-attrs @ file:///tmp/zanef2/spack-stage/spack-stage-py-attrs-23.1.0-hhimkyofhs4pd4z7nbbiadt275kwjapk/spack-src
-ax-platform @ file:///tmp/zanef2/spack-stage/spack-stage-py-ax-platform-0.3.1-baf7ugjav6734ihre3yrvgx6fhx3k2ls/spack-src
-Babel @ file:///tmp/zanef2/spack-stage/spack-stage-py-babel-2.12.1-ubb26kk3pdsodoqdc3r3mqfcurtysqt6/spack-src
-backcall @ file:///tmp/zanef2/spack-stage/spack-stage-py-backcall-0.2.0-paoklzgianghjk5dlfx2gp2ghwr3lbcz/spack-src
+absl-py==1.4.0
+aiohttp==3.8.4
+aiosignal==1.2.0
+anyio==3.6.2
+argon2-cffi==21.3.0
+argon2-cffi-bindings==21.2.0
+asttokens==2.4.0
+astunparse==1.6.3
+async-timeout==4.0.2
+attrs==23.1.0
+ax-platform==0.3.1
+Babel==2.12.1
+backcall==0.2.0
 bcrypt==4.1.2
-beautifulsoup4 @ file:///tmp/zanef2/spack-stage/spack-stage-py-beautifulsoup4-4.12.2-bzryfcssurzyqwoclyuu2rghwblafjg2/spack-src
-bleach @ file:///tmp/zanef2/spack-stage/spack-stage-py-bleach-6.0.0-ysgfj3qnmc46j2y2t3xbkhftgztbal2w/spack-src
-botorch @ file:///tmp/zanef2/spack-stage/spack-stage-py-botorch-0.8.4-47euli6nduk7n6obe7lpdmho3r3bd2rr/spack-src
-Bottleneck @ file:///tmp/zanef2/spack-stage/spack-stage-py-bottleneck-1.3.7-ucsl2pelp2kbjcofe466lf2xzeo4xatw/spack-src
-cachetools @ file:///tmp/zanef2/spack-stage/spack-stage-py-cachetools-5.2.0-mlugi2lniuqq6wrdsounrguitvao2r3i/spack-src
-certifi @ file:///tmp/zanef2/spack-stage/spack-stage-py-certifi-2023.7.22-zkew6jbdyulskprilxrdq7kw27sjtcco/spack-src
-cffi @ file:///tmp/zanef2/spack-stage/spack-stage-py-cffi-1.15.1-isi7xorniqzt7gdesqnqjpttepdcefit/spack-src
-charset-normalizer @ file:///tmp/zanef2/spack-stage/spack-stage-py-charset-normalizer-3.3.0-nzeduca5rlpjpo6kvzkwv7yoeuz3iryp/spack-src
-click @ file:///tmp/zanef2/spack-stage/spack-stage-py-click-8.1.7-l522iad4g2vvt56q4r7v43h646psvj5a/spack-src
-comm @ file:///tmp/zanef2/spack-stage/spack-stage-py-comm-0.1.4-iwg3km46xyy3gyoyft5nweze64n2yajd/spack-src
-contourpy @ file:///tmp/zanef2/spack-stage/spack-stage-py-contourpy-1.0.7-7yungwpzf4rt6zg6k4x5erfnbxwf5pr2/spack-src
+beautifulsoup4==4.12.2
+bleach==6.0.0
+botorch==0.8.4
+Bottleneck==1.3.7
+cachetools==5.2.0
+certifi==2023.7.22
+cffi==1.15.1
+charset-normalizer==3.3.0
+click==8.1.7
+comm==0.1.4
+contourpy==1.0.7
 cryptography==42.0.5
-cycler @ file:///tmp/zanef2/spack-stage/spack-stage-py-cycler-0.11.0-bsixhilpvd4dwp47q7q5o2jbbruzgyra/spack-src
-debugpy @ file:///tmp/zanef2/spack-stage/spack-stage-py-debugpy-1.6.7-tegchua5ckzdqbdacv67nobfu43finfj/spack-src
-decorator @ file:///tmp/zanef2/spack-stage/spack-stage-py-decorator-5.1.1-ia6ooapw2fuaenuncmalrckktpgh3grt/spack-src
-defusedxml @ file:///tmp/zanef2/spack-stage/spack-stage-py-defusedxml-0.7.1-z5i2zqau46ejzjqeqkwauqq2y5youeag/spack-src
+cycler==0.11.0
+debugpy==1.6.7
+decorator==5.1.1
+defusedxml==0.7.1
 dill==0.3.8
 diot==0.2.3
-executing @ file:///tmp/zanef2/spack-stage/spack-stage-py-executing-1.2.0-ve7h2dqu7sx3u3emrsgca5s4c5eykelk/spack-src
-fastjsonschema @ file:///tmp/zanef2/spack-stage/spack-stage-py-fastjsonschema-2.16.3-svp7ry5edgp46t6poklbrvcudzpwz5fv/spack-src
-filelock @ file:///tmp/zanef2/spack-stage/spack-stage-py-filelock-3.12.4-plcw5iuu73qla4tiknz5eycydy3o2oi4/spack-src
-fonttools @ file:///tmp/zanef2/spack-stage/spack-stage-py-fonttools-4.39.4-f5c3nfcqj42oktxiw2jme7dtlvw4ybd2/spack-src
-frozenlist @ file:///tmp/zanef2/spack-stage/spack-stage-py-frozenlist-1.3.1-tviwudx6lk77omqtlmohvmwk76fji6ov/spack-src
-fsspec @ file:///tmp/zanef2/spack-stage/spack-stage-py-fsspec-2023.10.0-xpcuekaif4v3n52d6cui64yuhl3o5s4c/spack-src
-gevent @ file:///tmp/zanef2/spack-stage/spack-stage-py-gevent-23.7.0-7kmfbzl47efqaawhoku6krjnnxpbki7v/spack-src
+executing==1.2.0
+fastjsonschema==2.16.3
+filelock==3.12.4
+fonttools==4.39.4
+frozenlist==1.3.1
+fsspec==2023.10.0
+gevent==23.7.0
 globus-sdk==3.37.0
-google-auth @ file:///tmp/zanef2/spack-stage/spack-stage-py-google-auth-2.16.2-u2rtmq34jbizl6dwn2mp4nmnfpetcgwp/spack-src
-google-auth-oauthlib @ file:///tmp/zanef2/spack-stage/spack-stage-py-google-auth-oauthlib-0.5.2-wz7iaycnurd22sb23aiajpu3yf4qu6yo/spack-src
-gpytorch @ file:///tmp/zanef2/spack-stage/spack-stage-py-gpytorch-1.10-yzbfmb4inkqsfrlzgn46d5dpzan5mgbm/spack-src
-greenlet @ file:///tmp/zanef2/spack-stage/spack-stage-py-greenlet-2.0.2-rxmnoavwa25idoeedgz7kdvvdfu7ne5u/spack-src
-grpcio @ file:///tmp/zanef2/spack-stage/spack-stage-py-grpcio-1.52.0-ljo6tp72rg4inunmhdofhfe2oavchiov/spack-src
-h5py @ file:///tmp/zanef2/spack-stage/spack-stage-py-h5py-3.8.0-s72pils2lpl7v7grhvhvjgshitnefvw6/spack-src
-idna @ file:///tmp/zanef2/spack-stage/spack-stage-py-idna-3.4-3ufvx34khhic4xblueqvwlwyzy74oixp/spack-src
+google-auth==2.16.2
+google-auth-oauthlib==0.5.2
+gpytorch==1.10
+greenlet==2.0.2
+grpcio==1.52.0
+h5py==3.8.0
+idna==3.4
 imageio==2.34.0
 inflection==0.5.1
-iniconfig @ file:///tmp/zanef2/spack-stage/spack-stage-py-iniconfig-2.0.0-5w446ikb3idkr7rzkz5worqway5nvlea/spack-src
-ipykernel @ file:///tmp/zanef2/spack-stage/spack-stage-py-ipykernel-6.23.1-enkyu7d6phvevdcaqwq4fe3376rc6ls5/spack-src
-ipython @ file:///tmp/zanef2/spack-stage/spack-stage-py-ipython-8.14.0-hww7lsbwtzojklkcifd6o7fl75rwrmow/spack-src
-ipython-genutils @ file:///tmp/zanef2/spack-stage/spack-stage-py-ipython-genutils-0.2.0-m6cupclgcxcr3v2e3spbidqu3sx46ts5/spack-src
-ipywidgets @ file:///tmp/zanef2/spack-stage/spack-stage-py-ipywidgets-8.0.2-w3j2qwfuuy5rvearzi7gbkrvnhzjyi2s/spack-src
-jedi @ file:///tmp/zanef2/spack-stage/spack-stage-py-jedi-0.18.2-xfz2xnuayyqg62bjnleajica7fmyzuse/spack-src
-Jinja2 @ file:///tmp/zanef2/spack-stage/spack-stage-py-jinja2-3.1.2-25bu2e3kjidh6ztw7ez4sltt6vboxuye/spack-src
-joblib @ file:///tmp/zanef2/spack-stage/spack-stage-py-joblib-1.2.0-7bfmeaqyx6fapfbcgbs36kovw6otdzxc/spack-src
-json5 @ file:///tmp/zanef2/spack-stage/spack-stage-py-json5-0.9.14-7pwehdhfbw2pgoqahxiwd6j6iyrm24iw/spack-src
-jsonschema @ file:///tmp/zanef2/spack-stage/spack-stage-py-jsonschema-4.17.3-obcevc35porbmjoh2b5eq3jidijeid56/spack-src
-jupyter-server @ file:///tmp/zanef2/spack-stage/spack-stage-py-jupyter-server-1.21.0-55pxjgfbrlhnqcydhnutbxdmw57ikgia/spack-src
-jupyter_client @ file:///tmp/zanef2/spack-stage/spack-stage-py-jupyter-client-8.2.0-g23rld6wjihy4a4v3nl5mc5zxmytz57w/spack-src
-jupyter_core @ file:///tmp/zanef2/spack-stage/spack-stage-py-jupyter-core-5.3.0-owv4pwqthn5vxi2ke3jywhgcb22yv3bp/spack-src
-jupyterlab @ file:///tmp/zanef2/spack-stage/spack-stage-py-jupyterlab-3.4.8-ktovg5vfdiu4kxqhwlusnofwsb5z3noy/spack-src
-jupyterlab-pygments @ file:///tmp/zanef2/spack-stage/spack-stage-py-jupyterlab-pygments-0.2.2-dfd3umqcyihmg5vgsqi35ipzjhtugq2e/spack-src/jupyterlab_pygments-0.2.2-py2.py3-none-any.whl#sha256=2405800db07c9f770863bcf8049a529c3dd4d3e28536638bd7c1c01d2748309f
-jupyterlab-widgets @ file:///tmp/zanef2/spack-stage/spack-stage-py-jupyterlab-widgets-3.0.3-vsd7acegftmzn7w3r3oxflbngchrwtdw/spack-src/jupyterlab_widgets-3.0.3-py3-none-any.whl#sha256=6aa1bc0045470d54d76b9c0b7609a8f8f0087573bae25700a370c11f82cb38c8
-jupyterlab_server @ file:///tmp/zanef2/spack-stage/spack-stage-py-jupyterlab-server-2.22.1-t3hva6r3w6kb2rugxdxwyntpvstbxknt/spack-src
-kiwisolver @ file:///tmp/zanef2/spack-stage/spack-stage-py-kiwisolver-1.4.5-qowe6ldthbuwvxtvfx4etzw3zze7asdn/spack-src
+iniconfig==2.0.0
+ipykernel==6.23.1
+ipython==8.14.0
+ipython-genutils==0.2.0
+ipywidgets==8.0.2
+jedi==0.18.2
+Jinja2==3.1.2
+joblib==1.2.0
+json5==0.9.14
+jsonschema==4.17.3
+jupyter_client==8.2.0
+jupyter_core==5.3.0
+jupyter-server==1.21.0
+jupyterlab==3.4.8
+jupyterlab-pygments==0.2.2
+jupyterlab_server==2.22.1
+jupyterlab-widgets==3.0.3
+kiwisolver==1.4.5
 lazy_loader==0.3
-lightning @ file:///tmp/zanef2/spack-stage/spack-stage-py-lightning-2.2.0-v6c2vudos2o6lcqbt4heggwsfroeuspv/spack-src
-lightning-utilities @ file:///tmp/zanef2/spack-stage/spack-stage-py-lightning-utilities-0.8.0-nob2klqimvwcqorln6ugqxct2d57pjuz/spack-src
-linear-operator @ file:///tmp/zanef2/spack-stage/spack-stage-py-linear-operator-0.4.0-wzpdhetchcwqnoc7uhvktuqtvigb5iys/spack-src
-llvmlite @ file:///tmp/zanef2/spack-stage/spack-stage-py-llvmlite-0.41.1-wjg5lr33eg3i2ii7k2urd3pv6vbrvw7s/spack-src
-Markdown @ file:///tmp/zanef2/spack-stage/spack-stage-py-markdown-3.4.1-cryzptxivghtmszr7dpl2hkpd2vivggt/spack-src
-MarkupSafe @ file:///tmp/zanef2/spack-stage/spack-stage-py-markupsafe-2.1.3-ltec55wqkw3tz4vnfr56nrn4ohqmf4kw/spack-src
-matplotlib @ file:///tmp/zanef2/spack-stage/spack-stage-py-matplotlib-3.8.2-dxtbn3xllysmswgrpcg2enapdakpts5q/spack-src
-matplotlib-inline @ file:///tmp/zanef2/spack-stage/spack-stage-py-matplotlib-inline-0.1.6-hy4piz3sjv5zoordhqfdxf2ae7g5qae7/spack-src
-mistune @ file:///tmp/zanef2/spack-stage/spack-stage-py-mistune-2.0.5-ltjtvxjslnwh4qoczyzbuimxsihxqjvi/spack-src
+lightning==2.2.0
+lightning-utilities==0.8.0
+linear-operator==0.4.0
+llvmlite==0.41.1
+Markdown==3.4.1
+MarkupSafe==2.1.3
+matplotlib==3.8.2
+matplotlib-inline==0.1.6
+mistune==2.0.5
 mizani==0.9.3
-mpi4py @ file:///tmp/zanef2/spack-stage/spack-stage-py-mpi4py-3.1.5-f7zylkut57usolm6ujhs4hrazpqnobq6/spack-src
-mpmath @ file:///tmp/zanef2/spack-stage/spack-stage-py-mpmath-1.2.1-ejxtymtjur4bb4djkkhlwwxib3jvsgh4/spack-src
-multidict @ file:///tmp/zanef2/spack-stage/spack-stage-py-multidict-6.0.4-qwesxzb36hlz6xxutl2xlh5obswytnxk/spack-src
-multipledispatch @ file:///tmp/zanef2/spack-stage/spack-stage-py-multipledispatch-0.6.0-54faoy4vavupr6vqeucfjryftra6xqo6/spack-src
-nbclassic @ file:///tmp/zanef2/spack-stage/spack-stage-py-nbclassic-1.0.0-iv7a7nkhyfxvimuntsa7s54bafypotqk/spack-src
-nbclient @ file:///tmp/zanef2/spack-stage/spack-stage-py-nbclient-0.8.0-2ddupeae5igiluvyah5ntutgnin2qqyv/spack-src
-nbconvert @ file:///tmp/zanef2/spack-stage/spack-stage-py-nbconvert-7.14.1-yggr6hjiieuplzi22tgwn5m6fxcxr7uq/spack-src
-nbformat @ file:///tmp/zanef2/spack-stage/spack-stage-py-nbformat-5.8.0-xjzskmxt4mwldy4pnxxco5vzkwnomu6n/spack-src
-nest-asyncio @ file:///tmp/zanef2/spack-stage/spack-stage-py-nest-asyncio-1.5.6-zma47mmv7qn7fymkxcim65g6xzlyimkc/spack-src
-networkx @ file:///tmp/zanef2/spack-stage/spack-stage-py-networkx-3.1-knpun2yqmxb4crnds5qrlcj5akbzerkg/spack-src
-notebook @ file:///tmp/zanef2/spack-stage/spack-stage-py-notebook-6.5.4-rrqjugvh7lkk3u4likuabx42wgu4jubw/spack-src
-notebook_shim @ file:///tmp/zanef2/spack-stage/spack-stage-py-notebook-shim-0.2.3-nmdyjny4tlm5rnodeivs6tqpro2waxl3/spack-src
-numba @ file:///tmp/zanef2/spack-stage/spack-stage-py-numba-0.58.1-5uzt5r3bbzyg4pywcadwazbdgcsj6kvl/spack-src
-numexpr @ file:///tmp/zanef2/spack-stage/spack-stage-py-numexpr-2.8.4-jhkjvtpxfyvduurx4j62lltqwt5vi25n/spack-src
-numpy @ file:///tmp/zanef2/spack-stage/spack-stage-py-numpy-1.26.3-qqgxgd3s5p33thbhtwbanpzszm2y3ncw/spack-src
-oauthlib @ file:///tmp/zanef2/spack-stage/spack-stage-py-oauthlib-3.2.1-jzsd6csmva3uyftqiyb2lgrtf65kkdny/spack-src
-opt-einsum @ file:///tmp/zanef2/spack-stage/spack-stage-py-opt-einsum-3.3.0-btr5wxcubyrddeejghlipxdzsbs342xd/spack-src
-packaging @ file:///tmp/zanef2/spack-stage/spack-stage-py-packaging-23.1-v6cl6h6w63zbmmg7m4u732zhldfzu3sg/spack-src
-pandas @ file:///tmp/zanef2/spack-stage/spack-stage-py-pandas-2.1.4-jbqfli4ysfe47tczne26dgg4z45limzu/spack-src
-pandocfilters @ file:///tmp/zanef2/spack-stage/spack-stage-py-pandocfilters-1.5.0-smvhhp4dw66so2ku23rn3wuq4ghii26p/spack-src
+mpi4py==3.1.5
+mpmath==1.2.1
+multidict==6.0.4
+multipledispatch==0.6.0
+nbclassic==1.0.0
+nbclient==0.8.0
+nbconvert==7.14.1
+nbformat==5.8.0
+nest-asyncio==1.5.6
+networkx==3.1
+notebook==6.5.4
+notebook_shim==0.2.3
+numba==0.58.1
+numexpr==2.8.4
+numpy==1.26.3
+oauthlib==3.2.1
+opt-einsum==3.3.0
+packaging==23.1
+pandas==2.1.4
+pandocfilters==1.5.0
 paramiko==3.4.0
 parsl==2024.2.26
-parso @ file:///tmp/zanef2/spack-stage/spack-stage-py-parso-0.8.3-btmzayhreancuyzplrov3zuuprgbjwcj/spack-src
+parso==0.8.3
 patchworklib==0.6.3
 patsy==0.5.6
-pexpect @ file:///tmp/zanef2/spack-stage/spack-stage-py-pexpect-4.8.0-x6l57o5gmbw5fdd3pyxcjzov5igzwaxb/spack-src
-pickleshare @ file:///tmp/zanef2/spack-stage/spack-stage-py-pickleshare-0.7.5-biapjh5dyeyiqy4jpeacxjkizzn6fi7h/spack-src
-Pillow @ file:///tmp/zanef2/spack-stage/spack-stage-py-pillow-10.0.0-ibgvsbl2bivai5hpbm7gtqqzajozv2pi/spack-src
-platformdirs @ file:///tmp/zanef2/spack-stage/spack-stage-py-platformdirs-3.10.0-hlub7urwtv4r2wfrgjwnnetyxtgfgtxg/spack-src
-plotly @ file:///tmp/zanef2/spack-stage/spack-stage-py-plotly-5.14.1-uyd4puqvsj6flkp4u2nif77yl66xqhra/spack-src
+pexpect==4.8.0
+pickleshare==0.7.5
+Pillow==10.0.0
+pip==23.1.2
+platformdirs==3.10.0
+plotly==5.14.1
 plotnine==0.12.4
 plotnine-prism==0.3.0
-pluggy @ file:///tmp/zanef2/spack-stage/spack-stage-py-pluggy-1.4.0-qspfow4heybj65hi4iwxao7jt6q3i24k/spack-src
-prometheus-client @ file:///tmp/zanef2/spack-stage/spack-stage-py-prometheus-client-0.17.0-6f25rrw7gnxj6fyramuevkel6hwe3gq5/spack-src
-prompt-toolkit @ file:///tmp/zanef2/spack-stage/spack-stage-py-prompt-toolkit-3.0.38-jdiahf2wbsx32khewe6kbgebvyzfyqmq/spack-src
-protobuf @ file:///tmp/zanef2/spack-stage/spack-stage-py-protobuf-3.20.3-c276j6b5pspsjoghjbugfsevary7oyf5/spack-src
-psutil @ file:///tmp/zanef2/spack-stage/spack-stage-py-psutil-5.9.5-bqf7lmeotwadb3wfiurzck2hzfenfspx/spack-src
-ptyprocess @ file:///tmp/zanef2/spack-stage/spack-stage-py-ptyprocess-0.7.0-unl2xmudu6riy2wnwkrfu3ajrgmbxpki/spack-src
-pure-eval @ file:///tmp/zanef2/spack-stage/spack-stage-py-pure-eval-0.2.2-migc7prmdrhkjetygxe3kqybzy3rujlj/spack-src
-pyasn1 @ file:///tmp/zanef2/spack-stage/spack-stage-py-pyasn1-0.4.8-eqqpmnvyzuxk7khz6t2wntnkpvfdk2xo/spack-src
-pyasn1-modules @ file:///tmp/zanef2/spack-stage/spack-stage-py-pyasn1-modules-0.2.8-ypmtoy5nvp6ivweagjcyhz5dt3sna4pv/spack-src
-pybind11 @ file:///tmp/zanef2/spack-stage/spack-stage-py-pybind11-2.11.0-rdwtpnuo4gp3xbufomxkitsjwt4dx55o/spack-src
-pycparser @ file:///tmp/zanef2/spack-stage/spack-stage-py-pycparser-2.21-wcrxnpsyxfyx32idlzvvv5i76mzskstc/spack-src
-Pygments @ file:///tmp/zanef2/spack-stage/spack-stage-py-pygments-2.16.1-buqyghjsmhysi3kmw72wqkh6qdq2qipc/spack-src
+pluggy==1.4.0
+prometheus-client==0.17.0
+prompt-toolkit==3.0.38
+protobuf==3.20.3
+psutil==5.9.5
+ptyprocess==0.7.0
+pure-eval==0.2.2
+pyasn1==0.4.8
+pyasn1-modules==0.2.8
+pybind11==2.11.0
+pycparser==2.21
+Pygments==2.16.1
 PyJWT==2.8.0
 PyNaCl==1.5.0
-pyparsing @ file:///tmp/zanef2/spack-stage/spack-stage-py-pyparsing-3.0.9-tue2aosfcaeijwzxwea3wgb4wh5duwwe/spack-src
-pyro-api @ file:///tmp/zanef2/spack-stage/spack-stage-py-pyro-api-0.1.2-h3bdxf22bjwcbaeahf4wc2zhb7n44krc/spack-src
-pyro-ppl @ file:///tmp/zanef2/spack-stage/spack-stage-py-pyro-ppl-1.8.4-cm2l6mwtvqkmhmak6bgzqol75h3ts2hp/spack-src
-pyrsistent @ file:///tmp/zanef2/spack-stage/spack-stage-py-pyrsistent-0.19.3-riez7zjbaqsqwwrw4ho4rl437cpyxdj6/spack-src
-pytest @ file:///tmp/zanef2/spack-stage/spack-stage-py-pytest-8.0.0-4ulz2jv47vku4xhlwvka7573bcrdzjh6/spack-src
-python-dateutil @ file:///tmp/zanef2/spack-stage/spack-stage-py-python-dateutil-2.8.2-v2buaehri2filvw74hqnsy2pk5tmogxr/spack-src
+pyparsing==3.0.9
+pyro-api==0.1.2
+pyro-ppl==1.8.4
+pyrsistent==0.19.3
+pytest==8.0.0
+python-dateutil==2.8.2
 pytorch-model-summary==0.1.2
-pytz @ file:///tmp/zanef2/spack-stage/spack-stage-py-pytz-2023.3-qcbloxkpfxdyaanrbywtrljim3vg7ckf/spack-src
-PyYAML @ file:///tmp/zanef2/spack-stage/spack-stage-py-pyyaml-6.0-mdfwpia2zp3zvoxdlrmcormj4upqtlpa/spack-src
-pyzmq @ file:///tmp/zanef2/spack-stage/spack-stage-py-pyzmq-25.0.2-cta3ko727qldq7fljt72skqjskrozu7i/spack-src
-requests @ file:///tmp/zanef2/spack-stage/spack-stage-py-requests-2.31.0-sfxgwf5fchr42wpazi4nru4agntgcl7n/spack-src
-requests-oauthlib @ file:///tmp/zanef2/spack-stage/spack-stage-py-requests-oauthlib-1.3.1-rebwi3xwwd2qwhwgecee2qbpv7wuwpi7/spack-src
-rsa @ file:///tmp/zanef2/spack-stage/spack-stage-py-rsa-4.9-xeiwb6weshx56pl43jdakoy2y4s2tpzp/spack-src
+pytz==2023.3
+PyYAML==6.0
+pyzmq==25.0.2
+requests==2.31.0
+requests-oauthlib==1.3.1
+rsa==4.9
 rtoml==0.8.0
 scikit-image==0.22.0
-scikit-learn @ file:///tmp/zanef2/spack-stage/spack-stage-py-scikit-learn-1.4.0-6beee6nq5k7mxi5fxsrhrdy3ehi272gg/spack-src
-scipy @ file:///tmp/zanef2/spack-stage/spack-stage-py-scipy-1.11.4-w4i4yldgjaran5y5e35wrltxw5bk3i74/spack-src
+scikit-learn==1.4.0
+scipy==1.11.4
 seaborn==0.13.2
-Send2Trash @ file:///tmp/zanef2/spack-stage/spack-stage-py-send2trash-1.8.0-utr656bynpwymyiddl5vdbgje2rux6am/spack-src
+Send2Trash==1.8.0
 setproctitle==1.3.3
-sh @ file:///tmp/zanef2/spack-stage/spack-stage-py-sh-1.14.3-yq46gfxyj2kv62exado2xf4eyklxxzs5/spack-src
-six @ file:///tmp/zanef2/spack-stage/spack-stage-py-six-1.16.0-2bkgr4hzvqfhvtevadsrv4n3eacls5q3/spack-src
-sniffio @ file:///tmp/zanef2/spack-stage/spack-stage-py-sniffio-1.3.0-po6xjrdtyeodt4crway4xp3u3yte4qk3/spack-src
-soupsieve @ file:///tmp/zanef2/spack-stage/spack-stage-py-soupsieve-2.4.1-2znimjzavv4mqqxdrfzsxgs7eyky5eup/spack-src
-stack-data @ file:///tmp/zanef2/spack-stage/spack-stage-py-stack-data-0.6.2-eybc3tzdlv4essdmi7vxasqhuuuo6vbh/spack-src
+setuptools==68.0.0
+sh==1.14.3
+six==1.16.0
+sniffio==1.3.0
+soupsieve==2.4.1
+stack-data==0.6.2
 statsmodels==0.14.1
-sympy @ file:///tmp/zanef2/spack-stage/spack-stage-py-sympy-1.11.1-5gvdx646zdsdeh3gv5vtpgxmdyvix2n7/spack-src
+sympy==1.11.1
 tblib==3.0.0
-tenacity @ file:///tmp/zanef2/spack-stage/spack-stage-py-tenacity-8.2.2-rpddeoqv6jdtwdfvpadaamxx4rtzmr7y/spack-src
-tensorboard @ file:///tmp/zanef2/spack-stage/spack-stage-py-tensorboard-2.14.1-if3be7a5zk3zznh3ckeazpcgl4rwodwo/spack-src/tensorboard-2.14.1-py3-none-any.whl#sha256=3db108fb58f023b6439880e177743c5f1e703e9eeb5fb7d597871f949f85fd58
-tensorboard-data-server @ file:///tmp/zanef2/spack-stage/spack-stage-py-tensorboard-data-server-0.7.0-pew6odtxdbttt7x2lefkk3ecp4e5e4q6/spack-src/tensorboard_data_server-0.7.0-py3-none-manylinux2014_x86_64.whl#sha256=f3b65db17726881239f8c49fef54aab7deabdba155d8e281bfa99720f44732fb
-terminado @ file:///tmp/zanef2/spack-stage/spack-stage-py-terminado-0.17.1-xz3n4luyipxldzi73og5unncfbi67p6m/spack-src
-threadpoolctl @ file:///tmp/zanef2/spack-stage/spack-stage-py-threadpoolctl-3.1.0-wgdaluiv5zrhafs7rmupq6sbxixu7aky/spack-src
+tenacity==8.2.2
+tensorboard==2.14.1
+tensorboard-data-server==0.7.0
+terminado==0.17.1
+threadpoolctl==3.1.0
 tifffile==2024.2.12
-tinycss2 @ file:///tmp/zanef2/spack-stage/spack-stage-py-tinycss2-1.2.1-b2rqw3x2k4ycejrntaqy57wngrkvemsj/spack-src
-torch @ file:///tmp/zanef2/spack-stage/spack-stage-py-torch-2.2.0-ksiwzzxi2h7cfuvg5y26ql76bnscgcs4/spack-src
-torchmetrics @ file:///tmp/zanef2/spack-stage/spack-stage-py-torchmetrics-1.3.0-5phy57vgi4fdu2w6k3onz63zinhcth2x/spack-src
-tornado @ file:///tmp/zanef2/spack-stage/spack-stage-py-tornado-6.3.3-drcnatowxd34owqvzk2nlec452acqdjn/spack-src
-tqdm @ file:///tmp/zanef2/spack-stage/spack-stage-py-tqdm-4.66.1-v5vveiculq5odkxn6wvtpdqddclly7m5/spack-src
-traitlets @ file:///tmp/zanef2/spack-stage/spack-stage-py-traitlets-5.9.0-2uhrk44xuwy2p7q74yqihrqzxutbhqbt/spack-src
-typeguard @ file:///tmp/zanef2/spack-stage/spack-stage-py-typeguard-2.13.3-jy2emz2ujsz6qy5rwihn3g74ayvgrv7e/spack-src
-typing_extensions @ file:///tmp/zanef2/spack-stage/spack-stage-py-typing-extensions-4.8.0-cw7asbnz6oknxngzi2usafxuuq4oj7vc/spack-src
-tzdata @ file:///tmp/zanef2/spack-stage/spack-stage-py-tzdata-2023.3-eb6d3edrz6fhbgmsftbfyhho6dhgdhbt/spack-src
-urllib3 @ file:///tmp/zanef2/spack-stage/spack-stage-py-urllib3-2.1.0-h5k57maen2xzgshucactvcegyq7a6d5l/spack-src
-wcwidth @ file:///tmp/zanef2/spack-stage/spack-stage-py-wcwidth-0.2.7-abdg73yaufel3ajss6veysnytbpdu5zw/spack-src
-webencodings @ file:///tmp/zanef2/spack-stage/spack-stage-py-webencodings-0.5.1-cgegmj3pks3pkw5cfqkzp5ofmjrpvwl2/spack-src
-websocket-client @ file:///tmp/zanef2/spack-stage/spack-stage-py-websocket-client-1.6.3-2bwtnnb5uisveeaaamd5ptpfchlhjbt7/spack-src
-Werkzeug @ file:///tmp/zanef2/spack-stage/spack-stage-py-werkzeug-3.0.0-kctlj5lzoxfpuaehzuu7rf4b3jv5vaqe/spack-src
-widgetsnbextension @ file:///tmp/zanef2/spack-stage/spack-stage-py-widgetsnbextension-4.0.3-ehaxvjh4g4ys3wnzjbjtqqp2azrbmxoo/spack-src
-yarl @ file:///tmp/zanef2/spack-stage/spack-stage-py-yarl-1.9.2-lwpimzc566jotuukihyyzogrb5hk4u6y/spack-src
-zope.event @ file:///tmp/zanef2/spack-stage/spack-stage-py-zope-event-4.6-bbg2vgxgtb5qmpn67dpll724yo6ajhad/spack-src
-zope.interface @ file:///tmp/zanef2/spack-stage/spack-stage-py-zope-interface-5.4.0-scodzsppvcwqy4xnjshwt45x4gekzab3/spack-src
+tinycss2==1.2.1
+torch==2.2.0
+torchmetrics==1.3.0
+tornado==6.3.3
+tqdm==4.66.1
+traitlets==5.9.0
+typeguard==2.13.3
+typing_extensions==4.8.0
+tzdata==2023.3
+urllib3==2.1.0
+wcwidth==0.2.7
+webencodings==0.5.1
+websocket-client==1.6.3
+Werkzeug==3.0.0
+wheel==0.41.2
+widgetsnbextension==4.0.3
+yarl==1.9.2
+zope.event==4.6
+zope.interface==5.4.0
