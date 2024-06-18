@@ -6,33 +6,39 @@ spack:
   # add package specs to the `specs` list
   specs:
   - nlohmann-json
-  - cuda@11.8.0
-  - gcc@11.4.0
-  - py-torch@2.2.0 -nccl -distributed -mpi -gloo
+  - cuda
+  - py-torch
   - py-scikit-learn
   - py-sh
   - ninja
   - py-click
   - py-plotly
   - py-pip
-  - rust@1.75.0
-  - hdf5@1.14.3 -mpi
+  - rust
+  - hdf5
   - py-jupyterlab
   - py-pytest
   - py-pandas
   - py-ax-platform
   - py-matplotlib
   - cmake
-  - py-tqdm
-  - ncurses
   - py-h5py
   view: true
   concretizer:
     unify: true
   packages:
-    gcc:
     all:
-      compiler: [gcc@11.4.0]
       variants: [+cuda cuda_arch=80]
-  mirrors:
-    v0.20.1: https://binaries.spack.io/v0.20.1
+      providers:
+        blas: [openblas]
+        lapack: [openblas]
+    py-torch:
+      require: '@2.2.0 -nccl -distributed -mpi -gloo -valgrind -mkldnn +cuda'
+    cuda:
+      require: '@11.8.0'
+    hdf5:
+      require: '@1.14.3 -mpi'
+    rust:
+      require: '@1.75.0'
+    cmake:
+      require: '@3.27.9'
