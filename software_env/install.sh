@@ -2,6 +2,7 @@
 git clone -c feature.manyFiles=true https://github.com/spack/spack.git
 export PATH="$PWD/spack/bin:$PATH"
 spack env create hpacml ./spack.yaml
+. /scratch/bcbs/zanef2/hpacml_artifact/software_env/spack/share/spack/setup-env.sh
 spack env activate hpacml -p
 spack concretize
 spack install -j $1

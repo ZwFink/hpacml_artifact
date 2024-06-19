@@ -7,6 +7,7 @@ spack:
   specs:
   - nlohmann-json
   - cuda
+  - python
   - py-torch
   - py-scikit-learn
   - py-sh
@@ -25,7 +26,7 @@ spack:
   - py-h5py
   view: true
   concretizer:
-    unify: true
+    unify: when_possible
   packages:
     all:
       variants: [+cuda cuda_arch=80]
@@ -33,7 +34,7 @@ spack:
         blas: [openblas]
         lapack: [openblas]
     py-torch:
-      require: '@2.2.0 -nccl -distributed -mpi -gloo -valgrind -mkldnn +cuda'
+      require: '@2.2.0 -distributed -valgrind -mkldnn +cuda'
     cuda:
       require: '@11.8.0'
     hdf5:
@@ -42,3 +43,5 @@ spack:
       require: '@1.75.0'
     cmake:
       require: '@3.27.9'
+    python:
+      require: '@3.11.7'
