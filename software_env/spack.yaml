@@ -35,6 +35,7 @@ spack:
         blas: [openblas]
         lapack: [openblas]
         mpi: [openmpi]
+      compiler: [gcc@11.4.0]
     py-torch:
       require: '@2.2.0 -distributed -valgrind -mkldnn +cuda'
     cuda:
