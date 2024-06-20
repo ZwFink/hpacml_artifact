@@ -31,7 +31,10 @@ CFLAGS := -DNX=768 \
           -std=c++17 --cuda-gpu-arch=$(ARCH) -g -fapprox -DCAPTURE_OUTPUT=$(CAPTURE_OUTPUT) -DAPPROX
 
 # Linker Flags
-LDFLAGS =-lcudart -L$(HPAC_LIBRARY_LOCATION) -lapprox -L/sw/spack/deltas11-2023-03/apps/linux-rhel8-zen3/gcc-11.4.0/hdf5-1.14.3-7b3feas/lib -lhdf5 -L/sw/spack/deltas11-2023-03/apps/linux-rhel8-x86_64/gcc-8.5.0/gcc-11.4.0-yycklku/lib64 -lmpi
+LDFLAGS =-L$(HPAC_LIBRARY_LOCATION) -lapprox -lcudart -fapprox -lmpi
+TORCH_LIBDIR := $(shell python -c "import torch; print(torch.__path__[0])")
+LIBSTDCPP_DIR := $(dir $(shell ldd $(TORCH_LIBDIR)/lib/libtorch_cpu.so | grep libstdc++ | awk '{print $$3}'))
+LDFLAGS += -L$(LIBSTDCPP_DIR)
 
 # Debug Flags
 ifeq ($(DEBUG),yes)

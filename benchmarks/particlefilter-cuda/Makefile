@@ -26,7 +26,10 @@ obj = $(source:.cu=.o)
 CFLAGS := $(EXTRA_CFLAGS) -std=c++17 --cuda-gpu-arch=$(ARCH) -g 
 
 # Linker Flags
-LDFLAGS = -L$(HPAC_LIBRARY_LOCATION)/approx-llvm/build_compiler/lib -lapprox -L$(CONDA_LOCATION)//miniconda3/envs/hpac_ml17/lib/ -L/sw/spack/delta-2022-03/apps/gcc/11.2.0-gcc-8.4.1-fxgnsyr/lib64 -lcudart -lhdf5
+LDFLAGS =-L$(HPAC_LIBRARY_LOCATION) -lapprox -lcudart -fapprox
+TORCH_LIBDIR := $(shell python -c "import torch; print(torch.__path__[0])")
+LIBSTDCPP_DIR := $(dir $(shell ldd $(TORCH_LIBDIR)/lib/libtorch_cpu.so | grep libstdc++ | awk '{print $$3}'))
+LDFLAGS += -L$(LIBSTDCPP_DIR)
 
 # Debug Flags
 ifeq ($(DEBUG),yes)
