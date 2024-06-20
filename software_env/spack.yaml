@@ -16,6 +16,7 @@ spack:
   - py-plotly
   - py-pip
   - rust
+  - mpi
   - hdf5
   - py-jupyterlab
   - py-pytest
@@ -33,6 +34,7 @@ spack:
       providers:
         blas: [openblas]
         lapack: [openblas]
+        mpi: [openmpi]
     py-torch:
       require: '@2.2.0 -distributed -valgrind -mkldnn +cuda'
     cuda:
