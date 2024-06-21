@@ -17,7 +17,7 @@ RUN \
     git clone --depth 1 --branch releases/v0.22 https://github.com/spack/spack.git &&\
     source spack/share/spack/setup-env.sh &&\
     spack install -j64 gcc@11.4.0 && \
-	spack compiler find ./spack/opt/spack/linux-rhel8-skylake/gcc-8.5.0/gcc-11.4.0-puldzqjb5kuljcwilnzymp3nla7wnsyr
+    spack compiler add $(spack location -i gcc@11.4.0) &&\
     spack env activate -p hpacml-spack-env &&\
     spack external find --all --exclude openssl --exclude openblas --exclude bzip2 --exclude binutils
 
