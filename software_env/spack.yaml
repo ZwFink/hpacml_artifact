@@ -41,6 +41,7 @@ spack:
       require: '@2.2.0 -distributed -valgrind -mkldnn +cuda'
     cuda:
       require: '@11.8.0'
+      buildable: False
     hdf5:
       require: '@1.14.3 -mpi'
     rust:

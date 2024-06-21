@@ -19,14 +19,14 @@ RUN \
     spack install -j64 gcc@11.4.0 && \
 	spack compiler find ./spack/opt/spack/linux-rhel8-skylake/gcc-8.5.0/gcc-11.4.0-puldzqjb5kuljcwilnzymp3nla7wnsyr
     spack env activate -p hpacml-spack-env &&\
-    spack external find --all --exclude openssl --exclude openblas --exclude bzip2 --exclude binutils --no-checksum 
+    spack external find --all --exclude openssl --exclude openblas --exclude bzip2 --exclude binutils
 
 
 FROM setup-spack-env AS install-spack-env
 RUN \
     source spack/share/spack/setup-env.sh &&\
     spack env activate -p hpacml-spack-env &&\
-    spack install --fail-fast -j64
+    spack install --fail-fast --no-checksum -j64
 
 FROM install-spack-env AS clean-spack
 RUN \
