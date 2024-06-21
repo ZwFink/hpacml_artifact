@@ -4,7 +4,7 @@ ARG cuda_arch=70
 ARG build_jobs=36
 RUN \
      yum install -y dnf &&\
-     dnf install -y vim git xz autoconf automake unzip patch gcc-gfortran gcc-c++ bzip2 file &&\
+     dnf install -y vim git xz autoconf automake unzip python39 libcurl-devel xz-devel patch gcc-gfortran gcc-c++ bzip2 file &&\
      dnf upgrade -y &&\
      dnf clean all
 
@@ -16,9 +16,10 @@ FROM base AS setup-spack-env
 RUN \
     git clone --depth 1 --branch releases/v0.22 https://github.com/spack/spack.git &&\
     source spack/share/spack/setup-env.sh &&\
-    spack install -j36 gcc@11.4.0 &&\
+    spack install -j36 gcc@11.4.0 && \
+	spack compiler find ./spack/opt/spack/linux-rhel8-skylake/gcc-8.5.0/gcc-11.4.0-puldzqjb5kuljcwilnzymp3nla7wnsyr
     spack env activate -p hpacml-spack-env &&\
-    spack external find --all --not-buildable --exclude openssl --exclude openblas --exclude bzip2
+    spack external find --all --exclude openssl --exclude openblas --exclude bzip2 --no-checksum
 
 
 FROM setup-spack-env AS install-spack-env
