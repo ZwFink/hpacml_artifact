@@ -101,12 +101,12 @@ void runMockFixed(const int repeat)
 
   for(int obj = 0; obj < repeat; obj++) {
     std::cout << obj << std::endl;
-    #pragma approx declare tensor_functor(fnctor: [i, j, k, 0:1] = ([i, j, k]))
-    #pragma approx declare tensor_functor(opt_fnctor: [i, j, 0:1] = ([i, j]))
-    #pragma approx declare tensor(tens: fnctor(tensorGpu[0:13000, 0:128, 0:128]))
-    #pragma approx ml(offline) in(tens) out(opt_fnctor(tensorGpuOpt[0:13000, 0:2]))
-    {
-    }
+    //#pragma approx declare tensor_functor(fnctor: [i, j, k, 0:1] = ([i, j, k]))
+    //#pragma approx declare tensor_functor(opt_fnctor: [i, j, 0:1] = ([i, j]))
+    //#pragma approx declare tensor(tens: fnctor(tensorGpu[0:13000, 0:128, 0:128]))
+    //#pragma approx ml(offline) in(tens) out(opt_fnctor(tensorGpuOpt[0:13000, 0:2]))
+    //{
+    //}
   }
 
   cudaFree(tensorGpu);
