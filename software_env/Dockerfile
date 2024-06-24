@@ -25,7 +25,7 @@ RUN \
 FROM setup-spack-env AS install-spack-env
 RUN \
     . spack/share/spack/setup-env.sh &&\
-    spack env activate -p hpacml-spack-env
+    spack env activate -p hpacml-spack-env &&\
     spack install --fail-fast --no-checksum -j2
 
 FROM install-spack-env AS clean-spack
