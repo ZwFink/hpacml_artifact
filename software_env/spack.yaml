@@ -40,7 +40,7 @@ spack:
     py-torch:
       require: '@2.2.0 -distributed -valgrind -mkldnn +cuda'
     cuda:
-      require: '@11.8.0'
+      require: '@11.8.89'
       buildable: False
     hdf5:
       require: '@1.14.3 -mpi'
@@ -48,5 +48,5 @@ spack:
       require: '@1.75.0'
     cmake:
       require: '@3.27.9'
-    python:
-      require: '@3.11.7'
+      #    python:
+      #require: '@3.11.7'

@@ -19,7 +19,7 @@ RUN \
     spack install -j64 gcc@11.4.0 && \
     spack compiler add $(spack location -i gcc@11.4.0) &&\
     spack env activate -p hpacml-spack-env &&\
-    spack external find --all --exclude openssl --exclude openblas --exclude bzip2 --exclude binutils
+    spack external find --all --exclude openssl --exclude openblas --exclude bzip2 --exclude binutils --not-buildable
 
 
 FROM setup-spack-env AS install-spack-env
