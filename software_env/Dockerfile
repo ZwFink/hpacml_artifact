@@ -1,4 +1,4 @@
-FROM pytorch/pytorch:2.2.2-cuda11.8-cudnn8-devel AS base
+FROM pytorch/pytorch:2.2.0-cuda11.8-cudnn8-devel AS base
 MAINTAINER Zane Fink <zanef2@illinois.edu>
 ARG cuda_arch=70
 ARG build_jobs=64
@@ -26,10 +26,17 @@ FROM setup-spack-env AS install-spack-env
 RUN \
     . spack/share/spack/setup-env.sh &&\
     spack env activate -p hpacml-spack-env &&\
-    spack install --fail-fast --no-checksum -j2
+    spack install --fail-fast --no-checksum -j16
 
 FROM install-spack-env AS clean-spack
 RUN \
+    . spack/share/spack/setup-env.sh &&\
     spack clean --all
+FROM clean-spack AS install-pip
+COPY requirements.txt hpacml-spack-env/requirements.txt
+RUN \
+    . spack/share/spack/setup-env.sh &&\
+    spack env activate -p hpacml-spack-env &&\
+    python3 -m pip install -r hpacml-spack-env/requirements.txt
 
-CMD ["/bin/bash", "-c", "source spack/share/spack/setup-env.sh && spack env activate -p hpacml-spack-env && /bin/bash"]
+CMD ["/bin/bash", "-c", ". spack/share/spack/setup-env.sh && spack env activate -p hpacml-spack-env && /bin/bash"]
