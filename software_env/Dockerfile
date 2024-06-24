@@ -31,3 +31,5 @@ RUN \
 FROM install-spack-env AS clean-spack
 RUN \
     spack clean --all
+
+CMD ["/bin/bash", "-c", "source spack/share/spack/setup-env.sh && spack env activate -p hpacml-spack-env && /bin/bash"]
