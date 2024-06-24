@@ -6,25 +6,10 @@ spack:
   # add package specs to the `specs` list
   specs:
   - nlohmann-json
-  - cuda
-  - python
-  - py-torch
-  - py-scikit-learn
-  - py-sh
   - ninja
-  - py-click
-  - py-plotly
   - py-pip
-  - rust
   - mpi
   - hdf5
-  - py-jupyterlab
-  - py-pytest
-  - py-pandas
-  - py-ax-platform
-  - py-matplotlib
-  - cmake
-  - py-h5py
   view: true
   concretizer:
     unify: when_possible
@@ -37,16 +22,5 @@ spack:
         mpi: [openmpi]
       compiler: [gcc@11.4.0]
       require: '%gcc@11.4.0'
-    py-torch:
-      require: '@2.2.0 -distributed -valgrind -mkldnn +cuda'
-    cuda:
-      require: '@11.8.89'
-      buildable: False
     hdf5:
       require: '@1.14.3 -mpi'
-    rust:
-      require: '@1.75.0'
-    cmake:
-      require: '@3.27.9'
-      #    python:
-      #require: '@3.11.7'
