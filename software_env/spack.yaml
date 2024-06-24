@@ -7,7 +7,6 @@ spack:
   specs:
   - nlohmann-json
   - ninja
-  - py-pip
   - mpi
   - hdf5
   view: true
