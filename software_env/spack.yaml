@@ -22,4 +22,4 @@ spack:
       compiler: [gcc@11.4.0]
       require: '%gcc@11.4.0'
     hdf5:
-      require: '@1.14.3 -mpi'
+      require: '@1.14.3 -mpi +hl'
