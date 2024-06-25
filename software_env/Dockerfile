@@ -1,7 +1,7 @@
 FROM pytorch/pytorch:2.2.0-cuda11.8-cudnn8-devel AS base
 MAINTAINER Zane Fink <zanef2@illinois.edu>
 ARG cuda_arch=70
-ARG build_jobs=64
+ARG build_jobs=3
 
 RUN \
     apt-get update &&\
@@ -26,7 +26,7 @@ FROM setup-spack-env AS install-spack-env
 RUN \
     . spack/share/spack/setup-env.sh &&\
     spack env activate -p hpacml-spack-env &&\
-    spack install --fail-fast --no-checksum -j16
+    spack install --fail-fast --no-checksum -j${build_jobs}
 
 FROM install-spack-env AS clean-spack
 RUN \
@@ -39,4 +39,13 @@ RUN \
     spack env activate -p hpacml-spack-env &&\
     python3 -m pip install -r hpacml-spack-env/requirements.txt
 
-CMD ["/bin/bash", "-c", ". spack/share/spack/setup-env.sh && spack env activate -p hpacml-spack-env && /bin/bash"]
+from install-pip as setup-hpacml
+RUN \
+    . spack/share/spack/setup-env.sh &&\
+    spack env activate -p hpacml-spack-env &&\
+    git clone --single-branch --branch hardcode_torch --depth 1 https://github.com/ZwFink/hpacml.git
+
+RUN cd hpacml && ./setup.sh $(pwd)/build_compiler ${build_jobs}
+
+
+CMD ["/bin/bash", "-c", ". /workspace/spack/share/spack/setup-env.sh && spack env activate -p hpacml-spack-env && . /workspace/hpacml/hpac_env.sh && /bin/bash"]
