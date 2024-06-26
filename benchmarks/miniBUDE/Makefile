@@ -28,7 +28,8 @@ LDFLAGS =
 
 # NV_FLAGS  = -I$(CUDA_PATH)/include -gencode arch=compute_35,code=sm_35 \
 # 			-restrict -Xcompiler "-O3 $(OPTIONS)" -use_fast_math -maxrregcount=62
-NV_FLAGS  = -O3 --cuda-gpu-arch=sm_80 -g -fapprox -DCAPTURE_OUTPUT=$(CAPTURE_OUTPUT)
+CFLAGS := $(EXTRA_CFLAGS) -O3 -fapprox -std=c++14 -Xcompiler -Wall --cuda-gpu-arch=sm_80 -DCAPTURE_OUTPUT=$(CAPTURE_OUTPUT) -D_GLIBCXX_USE_CXX11_ABI=0 -O3  -I/usr/local/cuda/include
+NV_FLAGS := $(EXTRA_CFLAGS) -O3 -fapprox -std=c++14 -Xcompiler -Wall --cuda-gpu-arch=sm_80 -DCAPTURE_OUTPUT=$(CAPTURE_OUTPUT) -D_GLIBCXX_USE_CXX11_ABI=0 -O3  -I/usr/local/cuda/include
 
 HIP_FLAGS = -O3
 
@@ -42,9 +43,6 @@ LINK = $(CC)
 
 # On V100, -DUSE_SHARED introduces correctness issues, -maxrregcount lower performance
 LDFLAGS =-L$(HPAC_LIBRARY_LOCATION) -lapprox -lcudart -fapprox
-TORCH_LIBDIR := $(shell python -c "import torch; print(torch.__path__[0])")
-LIBSTDCPP_DIR := $(dir $(shell ldd $(TORCH_LIBDIR)/lib/libtorch_cpu.so | grep libstdc++ | awk '{print $$3}'))
-LDFLAGS += -L$(LIBSTDCPP_DIR)
 endif
 
 bude: Makefile $(OBJ)

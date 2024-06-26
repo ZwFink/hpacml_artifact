@@ -24,13 +24,10 @@ obj = $(source:.cu=.o)
 #===============================================================================
 
 # Standard Flags
-CFLAGS := $(EXTRA_CFLAGS) -fapprox -std=c++14 -Xcompiler -Wall --cuda-gpu-arch=$(ARCH) -DCAPTURE_OUTPUT=$(CAPTURE_OUTPUT)
+CFLAGS := $(EXTRA_CFLAGS) -fapprox -std=c++14 -Xcompiler -Wall --cuda-gpu-arch=$(ARCH) -DCAPTURE_OUTPUT=$(CAPTURE_OUTPUT) -D_GLIBCXX_USE_CXX11_ABI=0
 
 # Linker Flags
-LDFLAGS =-L$(HPAC_LIBRARY_LOCATION) -lapprox -lcudart -fapprox
-TORCH_LIBDIR := $(shell python -c "import torch; print(torch.__path__[0])")
-LIBSTDCPP_DIR := $(dir $(shell ldd $(TORCH_LIBDIR)/lib/libtorch_cpu.so | grep libstdc++ | awk '{print $$3}'))
-LDFLAGS += -L$(LIBSTDCPP_DIR)
+LDFLAGS =-L$(HPAC_LIBRARY_LOCATION) -lapprox -lcudart -fapprox 
 
 # Debug Flags
 ifeq ($(DEBUG),yes)

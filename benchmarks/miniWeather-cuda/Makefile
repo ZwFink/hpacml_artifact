@@ -28,13 +28,11 @@ CFLAGS := -DNX=768 \
        	  -DNZ=384 \
 	  -DSIM_TIME=600 \
 	  -DDATA_SPEC=1 \
-          -fapprox -std=c++17 --cuda-gpu-arch=$(ARCH) -g -DCAPTURE_OUTPUT=$(CAPTURE_OUTPUT)
+		-I/hpacml-spack-env/.spack-env/view/include \
+          -fapprox -std=c++17 --cuda-gpu-arch=$(ARCH) -g -DCAPTURE_OUTPUT=$(CAPTURE_OUTPUT) -D_GLIBCXX_USE_CXX11_ABI=0
 
 # Linker Flags
-LDFLAGS =-L$(HPAC_LIBRARY_LOCATION) -lapprox -lcudart -fapprox -lmpi
-TORCH_LIBDIR := $(shell python -c "import torch; print(torch.__path__[0])")
-LIBSTDCPP_DIR := $(dir $(shell ldd $(TORCH_LIBDIR)/lib/libtorch_cpu.so | grep libstdc++ | awk '{print $$3}'))
-LDFLAGS += -L$(LIBSTDCPP_DIR)
+LDFLAGS =-L$(HPAC_LIBRARY_LOCATION) -lapprox -lcudart -fapprox -L/hpacml-spack-env/.spack-env/view/lib/ -lmpi
 
 # Debug Flags
 ifeq ($(DEBUG),yes)
