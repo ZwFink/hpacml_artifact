@@ -2,6 +2,7 @@ FROM pytorch/pytorch:2.2.0-cuda11.8-cudnn8-devel AS base
 MAINTAINER Zane Fink <zanef2@illinois.edu>
 ARG cuda_arch=70
 ARG build_jobs=3
+WORKDIR /
 
 RUN \
     apt-get update &&\
@@ -45,7 +46,7 @@ RUN \
     spack env activate -p hpacml-spack-env &&\
     git clone --single-branch --branch hardcode_torch --depth 1 https://github.com/ZwFink/hpacml.git
 
-RUN cd hpacml && ./setup.sh $(pwd)/build_compiler ${build_jobs}
+RUN ln -s /usr/local/cuda-11.8/lib64/libcudart.so /usr/lib64/libcudart.so && cd hpacml && ./setup.sh $(pwd)/build_compiler ${build_jobs}
 
 
-CMD ["/bin/bash", "-c", ". /workspace/spack/share/spack/setup-env.sh && spack env activate -p hpacml-spack-env && . /workspace/hpacml/hpac_env.sh && /bin/bash"]
+CMD [". /spack/share/spack/setup-env.sh && spack env activate -p hpacml-spack-env && . /hpacml/hpac_env.sh && exec /bin/bash"]
