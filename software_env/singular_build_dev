@@ -1,0 +1,47 @@
+Bootstrap: docker
+From: pytorch/pytorch:2.2.0-cuda11.8-cudnn8-devel 
+Stage: base
+
+%files
+spack.yaml hpacml-spack-env/spack.yaml
+requirements.txt hpacml-spack-env/requirements.txt
+%labels
+MAINTAINER Zane Fink <zanef2@illinois.edu>
+%post
+cuda_arch=70
+build_jobs=32
+mkdir -p /
+cd /
+
+\
+apt-get update &&\
+apt-get install -y vim git xz-utils autoconf automake libssl-dev unzip libcurl4-openssl-dev xz-utils patch bzip2 gfortran file &&\
+apt-get upgrade -y &&\
+apt-get clean
+
+\
+mkdir -p hpacml-spack-env
+
+git clone --depth 1 --branch releases/v0.22 https://github.com/spack/spack.git &&\
+. spack/share/spack/setup-env.sh &&\
+spack compiler find &&\
+spack env activate -p hpacml-spack-env &&\
+spack external find --all --exclude openssl --exclude openblas --exclude bzip2 --exclude binutils --not-buildable
+
+. spack/share/spack/setup-env.sh &&\
+spack env activate -p hpacml-spack-env &&\
+spack install --fail-fast --no-checksum -j${build_jobs}
+
+. spack/share/spack/setup-env.sh &&\
+spack clean --all
+
+. spack/share/spack/setup-env.sh &&\
+spack env activate -p hpacml-spack-env &&\
+python3 -m pip install -r hpacml-spack-env/requirements.txt
+ln -s /usr/local/cuda-11.8/lib64/libcudart.so /usr/lib64/libcudart.so
+
+
+%runscript
+exec /bin/bash -c "source /spack/share/spack/setup-env.sh && spack env activate -p /hpacml-spack-env && exec /bin/bash"
+%startscript
+exec /bin/bash -c "source /spack/share/spack/setup-env.sh && spack env activate -p /hpacml-spack-env && exec /bin/bash"
