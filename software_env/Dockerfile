@@ -44,7 +44,7 @@ from install-pip as setup-hpacml
 RUN \
     . spack/share/spack/setup-env.sh &&\
     spack env activate -p hpacml-spack-env &&\
-    git clone --single-branch --branch hardcode_torch --depth 1 https://github.com/ZwFink/hpacml.git
+    git clone --single-branch --branch sc24 --depth 1 https://github.com/ZwFink/hpacml.git
 
 RUN ln -s /usr/local/cuda-11.8/lib64/libcudart.so /usr/lib64/libcudart.so && cd hpacml && ./setup.sh $(pwd)/build_compiler ${build_jobs}
 
