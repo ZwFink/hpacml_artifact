@@ -6,7 +6,7 @@ WORKDIR /
 
 RUN \
     apt-get update &&\
-    apt-get install -y vim git xz-utils autoconf automake libssl-dev unzip libcurl4-openssl-dev xz-utils patch bzip2 gfortran file &&\
+    apt-get install -y vim git xz-utils autoconf automake ninja-build libssl-dev unzip libcurl4-openssl-dev xz-utils patch bzip2 gfortran file &&\
     apt-get upgrade -y &&\
     apt-get clean
 
@@ -46,7 +46,7 @@ RUN \
     spack env activate -p hpacml-spack-env &&\
     git clone --single-branch --branch sc24 --depth 1 https://github.com/ZwFink/hpacml.git
 
-RUN ln -s /usr/local/cuda-11.8/lib64/libcudart.so /usr/lib64/libcudart.so && cd hpacml && ./setup.sh $(pwd)/build_compiler ${build_jobs}
+RUN ln -s /usr/local/cuda-11.8/lib64/libcudart.so /usr/lib64/libcudart.so
+RUN cd hpacml && ./setup.sh /hpacml/build_compiler 3
 
-
-CMD [". /spack/share/spack/setup-env.sh && spack env activate -p hpacml-spack-env && . /hpacml/hpac_env.sh && exec /bin/bash"]
+CMD ["/bin/bash", "-c", "source /spack/share/spack/setup-env.sh && spack env activate -p hpacml-spack-env && exec /bin/bash"]
