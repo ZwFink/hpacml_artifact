@@ -49,6 +49,6 @@ RUN \
 RUN ln -s /usr/local/cuda-11.8/lib64/libcudart.so /usr/lib64/libcudart.so
 RUN \ 
   . spack/share/spack/setup-env.sh &&\
-    spack env activate -p hpacml-spack-env && cd hpacml && ./setup.sh /hpacml/build_compiler 3
+    spack env activate -p hpacml-spack-env && cd hpacml && ./setup.sh /hpacml/build_compiler ${build_jobs}
 
-CMD ["/bin/bash", "-c", "source /spack/share/spack/setup-env.sh && spack env activate -p hpacml-spack-env && source /hpacml/hpac_env.sh && exec /bin/bash"]
+CMD ["/bin/bash", "-c", "source /spack/share/spack/setup-env.sh && spack env activate -p /hpacml-spack-env && source /hpacml/hpac_env.sh && exec /bin/bash"]
