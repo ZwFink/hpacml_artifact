@@ -6,7 +6,7 @@ WORKDIR /
 
 RUN \
     apt-get update &&\
-    apt-get install -y vim git xz-utils autoconf automake libssl-dev unzip libcurl4-openssl-dev xz-utils patch bzip2 gfortran file &&\
+    apt-get install -y vim git xz-utils zip unzip autoconf automake libssl-dev unzip libcurl4-openssl-dev xz-utils patch bzip2 gfortran file &&\
     apt-get upgrade -y &&\
     apt-get clean
 
