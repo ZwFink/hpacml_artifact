@@ -698,7 +698,6 @@ int main(int argc, char **argv) {
   }
   std::cout << "State size is : " << state_size << "\n";
   EventRecorder::CPUEvent Trial{"Trial"};
-  Trial.recordStart();
 
   EventRecorder::GPUEvent HtoD{"HtoD"}, DtoH{"DtoH"}, Kernel{"Kernel"};
 
@@ -768,12 +767,15 @@ int main(int argc, char **argv) {
   std::cout << "NX is " << nx << "\n";
   std::cout << "NZ is " << nz << "\n";
 
-  Kernel.recordStart();
-
   while (etime < sim_time) {
     //If the time step leads to exceeding the simulation time, shorten it for the last step
     if (etime + dt > sim_time) { dt = sim_time - etime; }
     int ll = 0;
+    if(n_iters == 1001) {
+	Kernel.recordStart();
+	Trial.recordStart();	
+    }
+    if(n_iters > 1000) {
     #ifdef APPROX
     #pragma approx declare tensor(ipt_tens: state_functor(d_state[0:4, 0:(nz+2*hs), 0:(nx+2*hs)]))
 
@@ -781,6 +783,23 @@ int main(int argc, char **argv) {
     #endif
     {
     //Perform a single time step
+    perform_timestep(
+        d_state,
+        d_state_tmp,
+        d_flux,
+        d_tend,
+        d_hy_dens_cell, 
+        d_hy_dens_theta_cell, 
+        d_hy_dens_int, 
+        d_hy_dens_theta_int, 
+        d_hy_pressure_int, 
+        d_sendbuf_l, 
+        d_sendbuf_r, 
+        d_recvbuf_l, 
+        d_recvbuf_r, 
+        dt);
+    }
+    } else {
     perform_timestep(
         d_state,
         d_state_tmp,
@@ -817,7 +836,7 @@ int main(int argc, char **argv) {
   DtoH.recordStart();
   //Final reductions for mass, kinetic energy, and total energy
   // reductions(mass, te, hs, nx, nz, dx, dz, d_state, d_hy_dens_cell, d_hy_dens_theta_cell);
-  cudaMemcpy(state, d_state_tmp, state_size_byte, cudaMemcpyDeviceToHost);
+  cudaMemcpy(state, d_state, state_size_byte, cudaMemcpyDeviceToHost);
   DtoH.recordEnd();
 
   EventRecorder::LogEvent(HtoD);
