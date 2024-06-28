@@ -51,4 +51,4 @@ RUN \
   . spack/share/spack/setup-env.sh &&\
     spack env activate -p hpacml-spack-env && cd hpacml && ./setup.sh /hpacml/build_compiler 3
 
-CMD ["/bin/bash", "-c", "source /spack/share/spack/setup-env.sh && spack env activate -p hpacml-spack-env && exec /bin/bash"]
+CMD ["/bin/bash", "-c", "source /spack/share/spack/setup-env.sh && spack env activate -p hpacml-spack-env && source /hpacml/hpac_env.sh && exec /bin/bash"]
