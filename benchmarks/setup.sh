@@ -1,0 +1,6 @@
+#!/bin/bash
+echo Downloading input data...
+wget -O input_data.zip https://zenodo.org/records/12586948/files/input_data.zip\?download\=1
+echo Unpacking it...
+unzip input_data.zip
+rm input_data.zip
