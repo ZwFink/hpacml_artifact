@@ -24,7 +24,6 @@ RUN \
 
 
 FROM setup-spack-env AS install-spack-env
-ARG build_jobs
 RUN \
     . spack/share/spack/setup-env.sh &&\
     spack env activate -p hpacml-spack-env &&\
@@ -42,7 +41,6 @@ RUN \
     python3 -m pip install -r hpacml-spack-env/requirements.txt
 
 from install-pip as setup-hpacml
-ARG build_jobs
 RUN \
     . spack/share/spack/setup-env.sh &&\
     spack env activate -p hpacml-spack-env &&\
