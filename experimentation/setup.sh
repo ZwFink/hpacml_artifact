@@ -1,6 +1,6 @@
 #!/bin/bash 
 echo Cloning hpacml-experimentation...
-git clone git@github.com:ZwFink/hpacml-experimentation.git
+git clone https://github.com/ZwFink/hpacml-experimentation.git
 echo Success!
 
 echo Downloading trained models...
