@@ -39,8 +39,8 @@ docker run \
   -v ./experimentation/hpacml_models:/srgt/models \
   -v ./benchmarks:/srgt/benchmarks \
   -v ./benchmarks/input_data:/srgt/input_data \
-  --gpus all \
-  library/hpacml
+  --rm --gpus all \
+  -it library/hpacml
 EOL
 else
     if [ "$build_type" == "download" ]; then
