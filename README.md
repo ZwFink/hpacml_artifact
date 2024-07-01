@@ -44,7 +44,31 @@ On a system with 64 CPUs, the build takes about 30 minutes.
 To enter the container, run:
 ```bash
 ./run_container.sh
-cd /srgt
+cd /srgt/experimentation
 ```
 
-From here, you can CD
+From here, you can run the included `evaluate.py` script to evaluate the trained models and create plots for any benchmark.
+More details are given in the corresponding [README](benchmark_evaluation/README.md).
+The evaluation process runs both the original benchmark and the benchmark approximated using the models trained during the BO-based neural-architecture search detailed in the paper.
+After running the benchmark, the two runs are compared to compute important statistics such as speedup and error, and timing information is captured.
+
+We offer two different evaluation scenarios: _small_ and _large_.
+The _large_ scenario evaluates all models found during BO, and _small_ evaluates only the models shown in any of the result figures.
+
+The required runtime for each of the scenarios is given below:
+|     Benchmark    | Large (m) | Small (m) |
+|:----------------:|:---------:|:---------:|
+|     MiniBUDE     |    240    |     23    |
+| Binomial Options |     28    |     7     |
+|       Bonds      |     13    |     8     |
+|    MiniWeather   |     30    |    2.5    |
+|  ParticleFilter  |    50     |     15    |
+
+
+### Evaluating a Benchmark
+To evaluate `binomialoptions` with the _small_ configuration, simply run:
+```base
+python3 evaluate.py --benchmark binomialoptions --size small
+```
+
+This will run to complection and produce the file `plots/binomialoptions.png` with the results.
