@@ -1,5 +1,5 @@
 Bootstrap: docker
-From: nvidia/cuda:11.8.0-cudnn8-devel-ubuntu22.04
+From: pytorch/pytorch:2.2.0-cuda11.8-cudnn8-devel 
 Stage: base
 
 %files
@@ -15,7 +15,7 @@ cd /
 
 \
 apt-get update &&\
-apt-get install -y cmake vim git python3 python3-dev zip unzip xz-utils autoconf automake libssl-dev unzip libcurl4-openssl-dev xz-utils patch bzip2 gfortran file &&\
+apt-get install -y vim git zip unzip xz-utils autoconf automake libssl-dev unzip libcurl4-openssl-dev xz-utils patch bzip2 gfortran file &&\
 apt-get upgrade -y &&\
 apt-get clean
 
@@ -30,7 +30,7 @@ spack external find --all --exclude openssl --exclude openblas --exclude bzip2 -
 
 . spack/share/spack/setup-env.sh &&\
 spack env activate -p hpacml-spack-env &&\
-spack install --fail-fast --verbose --no-checksum -j${build_jobs}
+spack install --fail-fast --no-checksum -j${build_jobs}
 
 . spack/share/spack/setup-env.sh &&\
 spack clean --all
@@ -44,10 +44,7 @@ spack env activate -p hpacml-spack-env &&\
 git clone --single-branch --branch sc24 --depth 1 https://github.com/ZwFink/hpacml.git
 
 ln -s /usr/local/cuda-11.8/lib64/libcudart.so /usr/lib64/libcudart.so 
-
-. spack/share/spack/setup-env.sh &&\
-spack env activate -p hpacml-spack-env &&\
-cd hpacml && ./setup.sh /hpacml/build_compiler ${build_jobs}
+cd hpacml && ./setup.sh $(pwd)/build_compiler ${build_jobs}
 
 
 %runscript
