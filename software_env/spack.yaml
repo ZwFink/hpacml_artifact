@@ -9,6 +9,8 @@ spack:
   - ninja
   - mpi
   - hdf5
+  - py-pip
+  - py-torch
   view: true
   concretizer:
     unify: when_possible
@@ -23,3 +25,5 @@ spack:
       require: '%gcc@11.4.0'
     hdf5:
       require: '@1.14.3 -mpi +hl'
+    py-torch:
+      require: '@2.2.0 -distributed -valgrind -mkldnn +cuda'
