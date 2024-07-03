@@ -1,4 +1,4 @@
-FROM pytorch/pytorch:2.2.0-cuda11.8-cudnn8-devel AS base
+FROM nvidia/cuda:11.8.0-cudnn8-devel-ubuntu22.04 AS base
 MAINTAINER Zane Fink <zanef2@illinois.edu>
 ARG cuda_arch=70
 ARG build_jobs=3
@@ -6,7 +6,7 @@ WORKDIR /
 
 RUN \
     apt-get update &&\
-    apt-get install -y vim git xz-utils zip unzip autoconf automake libssl-dev unzip libcurl4-openssl-dev xz-utils patch bzip2 gfortran file &&\
+    apt-get install -y cmake vim git python3 python3-dev zip unzip xz-utils autoconf automake libssl-dev unzip libcurl4-openssl-dev xz-utils patch bzip2 gfortran file &&\
     apt-get upgrade -y &&\
     apt-get clean
 
