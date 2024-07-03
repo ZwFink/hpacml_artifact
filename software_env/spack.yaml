@@ -16,7 +16,7 @@ spack:
     unify: when_possible
   packages:
     all:
-      variants: [+cuda cuda_arch=80]
+      variants: [+cuda cuda_arch=60,70,80,90]
       providers:
         blas: [openblas]
         lapack: [openblas]
