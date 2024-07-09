@@ -28,8 +28,8 @@ LDFLAGS =
 
 # NV_FLAGS  = -I$(CUDA_PATH)/include -gencode arch=compute_35,code=sm_35 \
 # 			-restrict -Xcompiler "-O3 $(OPTIONS)" -use_fast_math -maxrregcount=62
-CFLAGS := $(EXTRA_CFLAGS) -O3 -fapprox -std=c++14 -Xcompiler -Wall --cuda-gpu-arch=sm_80 -DCAPTURE_OUTPUT=$(CAPTURE_OUTPUT) -DAPPROX -D_GLIBCXX_USE_CXX11_ABI=0 -O3  -I/usr/local/cuda/include
-NV_FLAGS := $(EXTRA_CFLAGS) -O3 -fapprox -std=c++14 -Xcompiler -Wall --cuda-gpu-arch=sm_80 -DCAPTURE_OUTPUT=$(CAPTURE_OUTPUT) -DAPPROX -D_GLIBCXX_USE_CXX11_ABI=0 -O3  -I/usr/local/cuda/include
+CFLAGS := $(EXTRA_CFLAGS) -O3 -fapprox -std=c++14 -Xcompiler -Wall --cuda-gpu-arch=$(HPAC_GPU_SM) -DCAPTURE_OUTPUT=$(CAPTURE_OUTPUT) -DAPPROX -O3  -I/usr/local/cuda/include
+NV_FLAGS := $(EXTRA_CFLAGS) -O3 -fapprox -std=c++14 -Xcompiler -Wall --cuda-gpu-arch=$(HPAC_GPU_SM) -DCAPTURE_OUTPUT=$(CAPTURE_OUTPUT) -DAPPROX -O3  -I/usr/local/cuda/include
 
 HIP_FLAGS = -O3
 
