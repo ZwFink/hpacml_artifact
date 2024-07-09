@@ -6,7 +6,7 @@
 CC        = clang++
 OPTIMIZE  = yes
 DEBUG     = no
-ARCH      = sm_80
+ARCH      = $(HPAC_GPU_SM)
 
 #===============================================================================
 # Program name & source code list
@@ -23,7 +23,7 @@ obj = $(source:.cu=.o)
 #===============================================================================
 
 # Standard Flags
-CFLAGS := $(EXTRA_CFLAGS) -std=c++17 --cuda-gpu-arch=$(ARCH) -g -D_GLIBCXX_USE_CXX11_ABI=0
+CFLAGS := $(EXTRA_CFLAGS) -std=c++17 --cuda-gpu-arch=$(ARCH) -g
 
 # Linker Flags
 LDFLAGS =-L$(HPAC_LIBRARY_LOCATION) -lapprox -lcudart -fapprox

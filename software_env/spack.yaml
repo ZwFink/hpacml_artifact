@@ -9,12 +9,14 @@ spack:
   - ninja
   - mpi
   - hdf5
+  - py-pip
+  - py-torch
   view: true
   concretizer:
     unify: when_possible
   packages:
     all:
-      variants: [+cuda cuda_arch=80]
+      variants: [+cuda cuda_arch=86]
       providers:
         blas: [openblas]
         lapack: [openblas]
@@ -23,3 +25,5 @@ spack:
       require: '%gcc@11.4.0'
     hdf5:
       require: '@1.14.3 -mpi +hl'
+    py-torch:
+      require: '@2.2.0 -distributed -valgrind -mkldnn +cuda'

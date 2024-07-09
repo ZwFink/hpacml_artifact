@@ -48,7 +48,7 @@ else
         apptainer pull hpacml.sif docker://zanef2/hpacml:latest
     else
         echo "Building Apptainer image..."
-        apptainer build hpacml.sif hpacml_apptainer.def
+        apptainer build --nv hpacml.sif hpacml_apptainer.def
     fi
 popd
 cat >run_container.sh <<EOL

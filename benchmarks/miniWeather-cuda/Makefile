@@ -6,7 +6,7 @@
 CC        = clang++
 OPTIMIZE  = yes
 DEBUG     = no
-ARCH      = sm_80
+ARCH      = $(HPAC_GPU_SM)
 CAPTURE_OUTPUT?=0
 
 #===============================================================================
@@ -29,7 +29,7 @@ CFLAGS := -DNX=768 \
 	  -DSIM_TIME=600 \
 	  -DDATA_SPEC=1 \
 		-I/hpacml-spack-env/.spack-env/view/include \
-          -fapprox -std=c++17 --cuda-gpu-arch=$(ARCH) -g -DCAPTURE_OUTPUT=$(CAPTURE_OUTPUT) -D_GLIBCXX_USE_CXX11_ABI=0
+          -fapprox -std=c++17 --cuda-gpu-arch=$(ARCH) -g -DCAPTURE_OUTPUT=$(CAPTURE_OUTPUT)
 
 # Linker Flags
 LDFLAGS =-L$(HPAC_LIBRARY_LOCATION) -lapprox -lcudart -fapprox -L/hpacml-spack-env/.spack-env/view/lib/ -lmpi

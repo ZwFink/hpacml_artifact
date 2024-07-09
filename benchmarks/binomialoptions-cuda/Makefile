@@ -6,7 +6,7 @@
 CC        = clang++
 OPTIMIZE  = yes
 DEBUG     = no
-ARCH      = sm_80
+ARCH      = $(HPAC_GPU_SM)
 CAPTURE_OUTPUT?=0
 
 #===============================================================================
@@ -24,7 +24,7 @@ obj = $(source:.cu=.o)
 #===============================================================================
 
 # Standard Flags
-CFLAGS := $(EXTRA_CFLAGS) -fapprox -std=c++14 -Xcompiler -Wall --cuda-gpu-arch=$(ARCH) -DCAPTURE_OUTPUT=$(CAPTURE_OUTPUT) -D_GLIBCXX_USE_CXX11_ABI=0
+CFLAGS := $(EXTRA_CFLAGS) -fapprox -std=c++14 -Xcompiler -Wall --cuda-gpu-arch=$(ARCH) -DCAPTURE_OUTPUT=$(CAPTURE_OUTPUT)
 
 # Linker Flags
 LDFLAGS =-L$(HPAC_LIBRARY_LOCATION) -lapprox -lcudart -fapprox 
