@@ -40,7 +40,7 @@ docker run \
   -v ./benchmarks:/srgt/benchmarks \
   -v ./benchmarks/input_data:/srgt/input_data \
   --rm --gpus all \
-  -it library/hpacml
+  -it zanef2/hpacml
 EOL
 else
     if [ "$build_type" == "download" ]; then
